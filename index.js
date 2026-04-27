@@ -24,6 +24,10 @@ app.use(session({
 }));
 
 
+app.get('/test-me', (req, res) => {
+  res.send('Server is responding!');
+});
+
 // Step 1: HubSpot OAuth Callback
 app.get('/callback', async (req, res) => {
   try {
