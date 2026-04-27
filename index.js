@@ -7,7 +7,7 @@ const qs = require("querystring");
 const connectDB = require('./db');
 const Meeting = require('./models/meetings');
 const convertHubspotTimezone = require('./timezoneMap');
-const Token = require('./models/Token');
+const Token = require('./models/token');
 const session = require('express-session');
 
 connectDB();
@@ -338,3 +338,4 @@ app.post("/delete-meeting", async (req, res) => {
 
 //localhost running @ 3000
 app.listen(3000, () => console.log("Server running"));
+module.exports = app;
