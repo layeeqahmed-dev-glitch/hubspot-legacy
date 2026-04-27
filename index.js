@@ -7,7 +7,7 @@ const qs = require("querystring");
 const connectDB = require('./db');
 const Meeting = require('./models/meetings');
 const convertHubspotTimezone = require('./timezoneMap');
-const Token = require('./models/token');
+const Token = require('./models/Token');
 const session = require('express-session');
 
 connectDB();
