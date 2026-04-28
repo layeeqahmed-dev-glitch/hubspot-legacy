@@ -10,7 +10,11 @@ const convertHubspotTimezone = require('./timezoneMap');
 const Token = require('./models/Token');
 const session = require('express-session');
 
-connectDB();
+connectDB().catch(err => {
+  console.error('MongoDB connection failed:', err);
+  process.exit(1);
+});
+
 app.use(express.text({ type: "*/*" }));
 
 let lastExecutionTime = 0;
