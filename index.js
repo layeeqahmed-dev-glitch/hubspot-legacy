@@ -24,7 +24,7 @@ app.use(session({
 }));
 
 
-app.get('/test-me', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Server is responding!');
 });
 
