@@ -79,9 +79,14 @@ app.get('/callback', async (req, res) => {
       `https://portal.meethour.io/serviceLogin?client_id=0pvx3tst84t7x3kym5wyvstnvol679mwmovk&redirect_uri=${encodeURIComponent(meethourRedirect)}&device_type=web&response_type=get`
     );
 
-  } catch (err) {
-    console.error('OAuth Error:', err.response?.data || err.message);
-    res.status(500).send('Installation failed!');
+  }
+  catch (err) {
+    console.error('OAuth Error Details:', {
+      message: err.message,
+      response: err.response?.data,
+      status: err.response?.status
+    });
+    res.status(500).send(`Installation failed! ${err.message}`);
   }
 });
 
